@@ -1,0 +1,17 @@
+<h1 class="application-title">Recipe Book</h1>
+<div class="container recipe-list">
+    <div class="col-xs-12">
+      <label for="search"><input name="search" ng-model="search" type="text" placeholder="Search Recipe" class="search form-control"></label>
+    </div>
+
+    <div ng-repeat="recipe in Home.recipes | filter: search" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 recipe" ui-sref="recipe({ recipeId : recipe.id })">
+      <div class="recipe-inner">
+        <div class="recipe-info name">{{ recipe.name }}</div>
+        <div class="recipe-info prep-time">{{ 'Preperation: ' + (recipe.preparation_time | timeToCook) }}</div>
+        <div class="recipe-info dificulty">{{ 'Dificulty: ' + recipe.difficulty_level }}</div>
+        <div class="recipe-info created-at">{{ 'Submited at: ' +  (recipe.created_at | dateToISO |  date:'MM/dd/yyyy') }}</div>
+      </div>
+    </div>
+
+
+</div>
