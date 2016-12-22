@@ -18,7 +18,9 @@
     "gulp-uglify": "latest",
     "gulp-watch": "latest",
     "mjml": "latest",
-    "rimraf": "latest"
+    "rimraf": "latest",
+    "karma": "latest",
+    "karma-jasmine": "latest"
   },
   "dependencies": {
     "connect-modrewrite": "^0.9.0"

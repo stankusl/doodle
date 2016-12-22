@@ -1,16 +1,11 @@
-@import url( 'https://fonts.googleapis.com/css?family=Sansita+One');
-
 body {
-    background: url('../img/recipe-book-bg.png');
-    background-size: cover;
-
+    background-color: #111;
+    color: green;
     .application-title {
-        font-family: 'Sansita One', cursive;
+        font-family: 'Courier', cursive;
         font-size: 80px;
         text-align: center;
-        text-shadow: 4px 4px #ff0000;
-        color: #fff;
     }
 
-  
+
 }
