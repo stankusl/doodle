@@ -1,6 +1,6 @@
 (function() {
 
-    angular.module('application', ['ui.bootstrap', 'ui.router'])
+    angular.module('application', ['ui.router'])
 
     .run(['$rootScope', '$state', function($rootScope, $state) {
         'use strict';
@@ -23,17 +23,7 @@
         }
     }])
 
-    .filter('dateToISO', function() {
-      return function(input) {
-        return new Date(input).toISOString();
-      };
-    })
 
-    .filter('timeToCook', function() {
-      return function(input) {
-        return input / 60 + 'min.';
-      };
-    })
 
     .run(['$rootScope', '$log', function($rootScope, $log) {
         //

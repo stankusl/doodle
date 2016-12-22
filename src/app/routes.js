@@ -12,14 +12,7 @@
             templateUrl: './app/components/home/home-view.html',
             controller: 'HomeController',
             controllerAs: 'Home'
-        })
-
-        .state('recipe', {
-            url: '/recipe/:recipeId',
-            templateUrl: './app/components/home/recipe-view.html',
-            controller: 'HomeController',
-            controllerAs: 'Recipe'
-        })
+        })    
 
         $urlRouterProvider.otherwise('/');
     }]);

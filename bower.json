@@ -11,11 +11,12 @@
   ],
   "dependencies": {
     "bootstrap": "v4.0.0-alpha.2",
-    "AngularJS-Toaster": "angularjs-toaster#^2.0.0",
-    "jquery": "~1.10.2",
-    "angular": "^1.5.6",
-    "angular-ui-router": "^0.3.1",
-    "angular-sanitize": "*"
+    "AngularJS-Toaster": "latest",
+    "jquery": "latest",
+    "angular": "latest",
+    "angular-bootstrap": "latest",
+    "angular-ui-router": "latest",
+    "angular-sanitize": "latest"
   },
   "devDependencies": {
   }

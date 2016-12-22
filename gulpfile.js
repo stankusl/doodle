@@ -11,7 +11,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     rigger = require('gulp-rigger'),
     ignore = require('gulp-ignore'),
-    imageop = require('gulp-image-optimization'),
+    imageop = require('gulp-imagemin'),
     rimraf = require('rimraf'),
     browserSync = require("browser-sync"),
     reload = browserSync.reload;
@@ -136,11 +136,7 @@ gulp.task('css:build', function () {
 // IMAGES BUILD
 gulp.task('img:build', function (cb) {
     gulp.src(path.src.img)
-        .pipe(imageop({
-            optimizationLevel: 5,
-            progressive: true,
-            interlaced: true
-        }))
+        .pipe(imageop())
         .on('error', printError)
         .pipe(gulp.dest(path.build.img))
         .on('end', cb)
