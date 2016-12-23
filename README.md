@@ -1,7 +1,7 @@
-# RecipeBook
+# Doodle:Bug
 
 ### Preacquisitions
-* NodeJS : http://nodejs.org (PLEASE NOTE VERSION 4.x)
+* NodeJS : http://nodejs.org
 * bower : npm install -g bower
 * gulp : npm install -g gulp
 
