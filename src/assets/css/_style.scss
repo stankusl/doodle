@@ -50,11 +50,6 @@ header{
   margin:0 auto;
 }
 
-section {
-  max-width:990px;
-    min-width:500px;
-  margin:0 auto;
-}
 
 header {
   background:#2C3E50;
@@ -75,11 +70,11 @@ h1{
   line-height:60px;
   padding: 120px 0;
   margin:0;
-}
+  span {
+      font-family: 'LatoBold', Lato, arial, sans-serif;
+      font-weight:900;
+  }
 
-h1 span {
-    font-family: 'LatoBold', Lato, arial, sans-serif;
-    font-weight:900;
 }
 
 h2 {
@@ -92,28 +87,31 @@ h2 {
     position: relative;
     margin: 50px auto 20px auto;
     border-bottom: 1px solid white;
-}
+    h2 {
+        transform: rotate(-90deg);
+        position:absolute;
+        top:50px;
+        left:-50px;
+        margin:0;
+        padding:10px;
+        background: #bbb;
+        // width:130px;
+        // height:34px
+        width: 200px;
+height: 55px;
+    }
 
-.core-section h2 {
-    transform: rotate(-90deg);
-    position:absolute;
-    top:50px;
-    left:-50px;
-    margin:0;
-    padding:10px;
-    background: #bbb;
-    width:130px;
-    height:34px
 }
 
 #compare-bugs {
-    width:100%;
     min-height:230px;
     position: relative;
 }
+
 #comparison-area {
     margin:0 auto;
 }
+
 #comparisonBase {
     background: url(../img/comparison-section-base.png) no-repeat;
     width:385px;
