@@ -1,4 +1,4 @@
-[ {
+[{
     "name": "mono",
     "team": "foo",
     "attributes": {
@@ -7,7 +7,8 @@
         "intelligence": 69
     },
     "enabled": true
-},{
+},
+{
     "name": "evil",
     "team": "doo",
     "attributes": {
@@ -16,7 +17,8 @@
         "intelligence": 99
     },
     "enabled": true
-},{
+},
+{
     "name": "odd",
     "team": "woo",
     "attributes": {
@@ -25,5 +27,14 @@
         "intelligence": 4
     },
     "enabled": true
-}
-]
+},
+{
+    "name": "run",
+    "team": "poo",
+    "attributes": {
+        "speed": 99,
+        "strength": 11,
+        "intelligence": 2
+    },
+    "enabled": true
+}]
