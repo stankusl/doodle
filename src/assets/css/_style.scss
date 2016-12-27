@@ -38,7 +38,6 @@ input[type="checkbox"] {
     overflow: hidden;
     width: 25px;
     height: 25px;
-    margin-left: 20px;
 }
 
 input[type="checkbox"]:checked {
@@ -107,10 +106,6 @@ h2 {
     position: relative;
 }
 
-#comparison-area {
-    margin: 0 auto;
-}
-
 #comparisonBase {
     background: url("../img/comparison-section-base.png") no-repeat;
     width: 385px;
@@ -130,9 +125,10 @@ th {
     text-transform: lowercase;
     vertical-align: top;
     padding-right: 30px;
-    font-size: 1.4em;
+    font-size: 1.6em;
     white-space:nowrap;
     font-family: 'LatoBold', Lato, arial, sans-serif;
+    font-weight:bold;
     line-height: 40px;
     padding-bottom: 10px;
     &:first-child {

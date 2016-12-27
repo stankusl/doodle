@@ -6,6 +6,11 @@
         self = this;
         $rootScope.pageTitle = 'Home';
         self.doodleBugs = [];
+        self.compareEnabled = true;
+
+        self.clickBug = function(bugIndex) {
+          console.log(bugIndex);
+        }
 
         self.getHighestRating = function(bugObject) {
           var highestRating = Math.max(bugObject.attributes.speed, Math.max(bugObject.attributes.strength, bugObject.attributes.intelligence));
@@ -13,7 +18,6 @@
         }
 
         self.formatName = function (bugObject) {
-            
             return bugObject.name + ':bug';
         }
 

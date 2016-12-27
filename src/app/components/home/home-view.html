@@ -5,81 +5,91 @@
 
 <div class="container">
 
-  <section id="bug-list" class="col-xs-12 col-lg-8">
-      <table name="doodle-list" description="All available players for the game">
-          <thead>
-              <tr>
-                  <th class="sortable bugname">Doodle <a href="#">sort</a></th>
-                  <th class="sortable">Team <a href="#">sort</a></th>
-                  <th>Best rating</th>
-                  <th>Compare</th>
-              </tr>
-          </thead>
-          <tbody>
+    <section id="bug-list" class="col-xs-12 col-lg-8">
+        <table name="doodle-list" description="All available players for the game">
+            <thead>
+                <tr>
+                    <th class="sortable bugname">Doodle <a href="#">sort</a></th>
+                    <th class="sortable">Team <a href="#">sort</a></th>
+                    <th>Best rating</th>
+                    <th>vs</th>
+                </tr>
+            </thead>
+            <tbody>
 
-              <tr ng-repeat="bug in Home.doodleBugs">
-                <td class="icon-{{bug.name + '-bug'}}">{{ bug.name }}<b>:bug</b></td>
-                <td>{{ bug.team }}</td>
-                <td>{{ Home.getHighestRating(bug) }}</td>
-                <td><input name="compare[]" type="checkbox" value=""/></td>
-              </tr>
+                <tr ng-repeat="bug in Home.doodleBugs track by $index" ng-click="Home.clickBug($index)" style="cursor: pointer;">
+                    <td class="icon-{{bug.name + '-bug'}}">{{ bug.name }}<b>:bug</b></td>
+                    <td>{{ bug.team }}</td>
+                    <td>{{ Home.getHighestRating(bug) }}</td>
+                    <td><input name="compare[]" type="checkbox" value="" /></td>
+                </tr>
 
-          </tbody>
+            </tbody>
 
-      </table>
-      <div class="clearfix"></div>
-  </section>
+        </table>
+        <div class="clearfix"></div>
+    </section>
 
-  <section class="col-xs-12 col-lg-4">
-      <div id="comparison-area">
+    <section class="col-xs-12 col-lg-4">
+        <div id="comparison-area">
 
             <div class="comparison-images text-xs-center row">
-              <div class="compare1 col-xs-4">
-                ?
-              </div>
+                <div class="compare1 col-xs-4">
+                    <span class="holder">
+                  ?
+                </span>
 
-              <div class="compare-vs col-xs-4">
-                vs
-              </div>
+                </div>
 
-              <div class="compare2 col-xs-4">
-                ?
-              </div>
+                <div class="compare-vs col-xs-4">
+                    vs
+                </div>
+
+                <div class="compare2 col-xs-4">
+                    <span class="holder">
+                  ?
+                </span>
+                </div>
             </div>
 
-            <p class="text-xs-center">
-              Select two doodles to<br>
-              compare which has the<br>
-              skills you like most.
+            <p ng-if="!Home.compareEnabled" id="info-text" class="text-xs-center">
+                Select two doodles to<br> compare which has the<br> skills you like most.
             </p>
 
-            <div class="stats row">
+            <div  class="stats row">
 
-              <div class="stats speed">
-                <div class="left-stat text-xs-left col-xs-4">0</div>
-                <div class="attribute-name text-xs-center col-xs-4">speed</div>
-                <div class="right-stat text-xs-right col-xs-4">53</div>
-              </div>
+                <section ng-if="Home.compareEnabled" id="stats-holder">
 
-              <div class="stats strength">
-                <div class="left-stat text-xs-left col-xs-4">0</div>
-                <div class="attribute-name text-xs-center col-xs-4">strength</div>
-                <div class="right-stat text-xs-right col-xs-4">53</div>
-              </div>
+                    <div class="stats speed">
+                        <div class="left-stat text-xs-left col-xs-4 leser">0</div>
+                        <div class="attribute-name text-xs-center col-xs-4">speed</div>
+                        <div class="right-stat text-xs-right col-xs-4 greater">53</div>
+                        <div class="clearfix"></div>
+                    </div>
 
-              <div class="stats agility">
-                <div class="left-stat text-xs-left col-xs-4">0</div>
-                <div class="attribute-name text-xs-center col-xs-4">agility</div>
-                <div class="right-stat text-xs-right col-xs-4">53</div>
-              </div>
+                    <div class="stats strength">
+                        <div class="left-stat text-xs-left col-xs-4">0</div>
+                        <div class="attribute-name text-xs-center col-xs-4">strength</div>
+                        <div class="right-stat text-xs-right col-xs-4">53</div>
+                        <div class="clearfix"></div>
+                    </div>
 
-              <div class="clearfix"></div>
+                    <div class="stats agility">
+                        <div class="left-stat text-xs-left col-xs-4">0</div>
+                        <div class="attribute-name text-xs-center col-xs-4">agility</div>
+                        <div class="right-stat text-xs-right col-xs-4">53</div>
+                        <div class="clearfix"></div>
+                    </div>
 
-              <div id="comparisonBase"></div>
-          </div>
-      </div>
+                </section>
+
+                <div class="clearfix"></div>
+
+                <div id="comparisonBase"></div>
+            </div>
+        </div>
         <div class="clearfix"></div>
-  </section>
+    </section>
 
-  <div class="clearfix"></div>
+    <div class="clearfix"></div>
 </div>

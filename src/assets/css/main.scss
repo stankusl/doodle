@@ -1,3 +1,118 @@
 // Overwrites
 @import 'style';
 @import 'icons';
+
+#comparison-area {
+    margin-top: 100px;
+
+    #info-text {
+        margin-top: 45px;
+        font-size: 24px;
+        font-family: Lato, arial, sans-serif;
+        font-weight: lighter;
+        height: 160px;
+    }
+
+    #stats-holder {
+        height: 160px;
+        margin-top: 45px;
+        font-family: Lato, arial, sans-serif;
+        .stats{
+          margin-top:20px;
+          font-size: 18px;
+          white-space: nowrap;
+          .attribute-name{
+              color: #2c3e50;
+          }
+          .greater {
+            color: #6ee80c !important;;
+            font-weight: bold;
+          }
+          .leser {
+            color: #e74c3c !important;
+            font-weight: bold;
+
+          }
+          .left-stat{
+            padding-left: 60px;
+            font-size: 20px;
+            color: #8c97a0;
+            font-weight: bold;
+          }
+          .right-stat {
+            padding-right: 48px;
+            font-size: 20px;
+            color: #8c97a0;
+            font-weight: bold;
+          }
+        }
+    }
+
+    .comparison-images {
+        font-family: 'LatoBold', Lato, arial, sans-serif;
+
+        .compare1 {
+            display: block;
+            position: relative;
+
+            .holder {
+                position: absolute;
+                top: 35px;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                margin: auto;
+                background: #8c97a0;
+                border-radius: 50%;
+                height: 80px;
+                width: 80px;
+                display: block;
+                font-size: 60px;
+                color: #fff;
+                line-height: 80px;
+                font-weight: bold;
+            }
+        }
+
+        .compare-vs {
+            text-align: center;
+            font-size: 40px;
+            font-family: 'LatoBold', Lato, arial, sans-serif;
+            font-weight: bold;
+            line-height: 40px;
+            color: #2c3e50;
+        }
+
+        .compare2 {
+            display: block;
+            position: relative;
+
+            .holder {
+                position: absolute;
+                top: 35px;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                margin: auto;
+                background: #8c97a0;
+                border-radius: 50%;
+                height: 80px;
+                width: 80px;
+                display: block;
+                font-size: 60px;
+                color: #fff;
+                line-height: 80px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+footer {
+    padding-top: 40px;
+
+    p {
+        text-align: center;
+        display: none;
+    }
+}
