@@ -1,33 +1,30 @@
 (function() {
     'use strict';
-    angular.module('application').controller('HomeController', ['$rootScope', '$scope', '$log', '$q', '$state', '$stateParams', 'HomeServices', HomeController]);
+    angular.module('application').controller('HomeController', ['$rootScope', '$scope', 'HomeServices', HomeController]);
 
-    function HomeController($rootScope, $scope) {
+    function HomeController($rootScope, $scope, HomeServices) {
         self = this;
         $rootScope.pageTitle = 'Home';
+        self.doodleBugs = [];
 
-
-
-        self.bugObj = function (options) {
-            this.doodleName = options.name || 'unnamed';
-            this.teamName = options.team || 'foo';
-            this.attributes = {
-                speed: options.attributes.speed,
-                strength: options.attributes.strength,
-                intelligence: options.attributes.intelligence
-            };
-            this.getHighestRating = function () {
-                var highestRating = Math.max(this.attributes.speed, Math.max(this.attributes.strength, this.attributes.intelligence));
-                return highestRating;
-            };
-            this.getName = function () {
-                return this.doodleName;
-            };
-            this.formatName = function () {
-                return this.doodleName + ':bug'
-            }
+        self.getHighestRating = function(bugObject) {
+          var highestRating = Math.max(bugObject.attributes.speed, Math.max(bugObject.attributes.strength, bugObject.attributes.intelligence));
+          return highestRating;
         }
 
+        self.formatName = function (bugObject) {
+            
+            return bugObject.name + ':bug';
+        }
+
+        HomeServices.getAllBugs().then(
+        function(result) {
+            self.doodleBugs = result;
+            console.log(result);
+        },
+        function(err) {
+            console.log('Error saving to endpoint: ', err);
+        });
 
     };
 

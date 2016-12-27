@@ -16,22 +16,26 @@
 
 body {
   background: #ECF0F1;
+  -webkit-touch-callout: none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
 }
 
 input[type="checkbox"] {
+    &:focus{
+       outline: none;
+    }
     padding-left:5px;
     padding-right:5px;
     border-radius:15px;
-
     -webkit-appearance:button;
-
-    border: double 4px #ccc;
-
-    background-color:#ccc;
-    color:#FFF;
+    border: solid 2px #acc4b7;
+    background-color:#fff;
     white-space: nowrap;
     overflow:hidden;
-
     width:25px;
     height:25px;
 }
@@ -41,17 +45,13 @@ input[type="checkbox"]:checked {
 }
 
 input[type="checkbox"]:hover {
-    box-shadow:0px 0px 10px #1300ff;
+   box-shadow:0px 0px 5px #3498db;
 }
 
 header{
   max-width:990px;
   min-width:300px;
   margin:0 auto;
-}
-
-
-header {
   background:#2C3E50;
   border-radius: 300px;
   max-width:300px;
