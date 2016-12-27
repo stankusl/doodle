@@ -9,7 +9,7 @@
         <table name="doodle-list" description="All available players for the game">
             <thead>
                 <tr>
-                    <th class="sortable bugname">Doodle <a href="#">sort</a></th>
+                    <th class="sortable bugname" ng-click="sortBy('name')">Doodle <a href="#">sort</a></th>
                     <th class="sortable">Team <a href="#">sort</a></th>
                     <th>Best rating</th>
                     <th>vs</th>
@@ -17,7 +17,7 @@
             </thead>
             <tbody>
 
-                <tr ng-repeat="bug in Home.doodleBugs track by $index" ng-click="Home.clickBug($index)" style="cursor: pointer;">
+                <tr ng-repeat="bug in Home.doodleBugs track by $index  | orderBy:'name'" ng-click="Home.clickBug($index)" style="cursor: pointer;">
                     <td class="icon-{{bug.name + '-bug'}}">{{ bug.name }}<b>:bug</b></td>
                     <td>{{ bug.team }}</td>
                     <td>{{ Home.getHighestRating(bug) }}</td>
@@ -60,24 +60,25 @@
 
                 <section ng-if="Home.compareEnabled" id="stats-holder">
 
+
                     <div class="stats speed">
-                        <div class="left-stat text-xs-left col-xs-4 leser">0</div>
+                        <div class="left-stat text-xs-left col-xs-4">{{ Home.comparisonArray[0].attributes.speed || '0'}}</div>
                         <div class="attribute-name text-xs-center col-xs-4">speed</div>
-                        <div class="right-stat text-xs-right col-xs-4 greater">53</div>
+                        <div class="right-stat text-xs-right col-xs-4">{{ Home.comparisonArray[1].attributes.speed || '0' }}</div>
                         <div class="clearfix"></div>
                     </div>
 
                     <div class="stats strength">
-                        <div class="left-stat text-xs-left col-xs-4">0</div>
+                        <div class="left-stat text-xs-left col-xs-4">{{ Home.comparisonArray[0].attributes.strength || '0'}}</div>
                         <div class="attribute-name text-xs-center col-xs-4">strength</div>
-                        <div class="right-stat text-xs-right col-xs-4">53</div>
+                        <div class="right-stat text-xs-right col-xs-4">{{ Home.comparisonArray[1].attributes.strength || '0'}}</div>
                         <div class="clearfix"></div>
                     </div>
 
                     <div class="stats agility">
-                        <div class="left-stat text-xs-left col-xs-4">0</div>
-                        <div class="attribute-name text-xs-center col-xs-4">agility</div>
-                        <div class="right-stat text-xs-right col-xs-4">53</div>
+                        <div class="left-stat text-xs-left col-xs-4">{{ Home.comparisonArray[0].attributes.intelligence || '0' }}</div>
+                        <div class="attribute-name text-xs-center col-xs-4">intelligence</div>
+                        <div class="right-stat text-xs-right col-xs-4">{{ Home.comparisonArray[1].attributes.intelligence || '0'}}</div>
                         <div class="clearfix"></div>
                     </div>
 
@@ -89,6 +90,11 @@
             </div>
         </div>
         <div class="clearfix"></div>
+
+        <pre>
+            {{ Home.comparisonArray | json }}
+        </pre>
+
     </section>
 
     <div class="clearfix"></div>

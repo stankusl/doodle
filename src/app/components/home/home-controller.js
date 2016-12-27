@@ -7,9 +7,57 @@
         $rootScope.pageTitle = 'Home';
         self.doodleBugs = [];
         self.compareEnabled = true;
+        self.comparisonArray = [];
 
         self.clickBug = function(bugIndex) {
+          console.log(self.doodleBugs[bugIndex]);
+
+          if( (self.comparisonArray).length < 2  ) {
+
+            var isInArray = false;
+
+            // Check if item alread exists in current array
+            angular.forEach(self.comparisonArray, function(value, index) {
+              console.log('comparison array itterates', index);
+              if( value.name == self.doodleBugs[bugIndex].name ) {
+                self.comparisonArray.splice(index, 1);
+                isInArray = true;
+              }
+            });
+
+
+            // Item doesnt exist, push item into array.
+            if(!isInArray) {
+              self.comparisonArray.push(self.doodleBugs[bugIndex])
+            }
+            // Item Exists, find item and remove it
+
+
+
+
+          }
+
+          else {
+            alert("You can only compare two items!");
+            return;
+          }
+
+          console.log(self.comparisonArray);
           console.log(bugIndex);
+        }
+
+        self.isGreater = function(value1, value2) {
+          if( parseInt(value1) > parseInt(value2) ) {
+            return 'greater';
+          }
+          else {
+            return 'leser';
+          };
+
+          if( parseInt(value1) === parseInt(value2) ){
+            return '';
+          }
+
         }
 
         self.getHighestRating = function(bugObject) {

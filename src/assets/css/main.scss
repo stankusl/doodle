@@ -18,11 +18,12 @@
         margin-top: 45px;
         font-family: Lato, arial, sans-serif;
         .stats{
-          margin-top:20px;
-          font-size: 18px;
+          margin-top:10px;
+
           white-space: nowrap;
           .attribute-name{
               color: #2c3e50;
+              font-size: 24px;
           }
           .greater {
             color: #6ee80c !important;;
@@ -35,13 +36,13 @@
           }
           .left-stat{
             padding-left: 60px;
-            font-size: 20px;
+            font-size: 24px;
             color: #8c97a0;
             font-weight: bold;
           }
           .right-stat {
             padding-right: 48px;
-            font-size: 20px;
+            font-size: 24px;
             color: #8c97a0;
             font-weight: bold;
           }
