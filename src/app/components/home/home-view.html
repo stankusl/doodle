@@ -9,15 +9,15 @@
         <table name="doodle-list" description="All available players for the game">
             <thead>
                 <tr>
-                    <th class="sortable bugname" ng-click="sortBy('name')">Doodle <a href="#">sort</a></th>
-                    <th class="sortable">Team <a href="#">sort</a></th>
+                    <th class="sortable bugname" ng-click="Home.sortBy('name')">Doodle <a href="#">sort</a></th>
+                    <th class="sortable" ng-click="Home.sortBy('team')">Team <a href="#">sort</a></th>
                     <th>Best rating</th>
                     <th>vs</th>
                 </tr>
             </thead>
             <tbody>
 
-                <tr ng-repeat="bug in Home.doodleBugs track by $index  | orderBy:'name'" ng-click="Home.clickBug($index)" style="cursor: pointer;">
+                <tr ng-repeat="bug in Home.doodleBugs track by $index" ng-click="Home.clickBug($index)" style="cursor: pointer;">
                     <td class="icon-{{bug.name + '-bug'}}">{{ bug.name }}<b>:bug</b></td>
                     <td>{{ bug.team }}</td>
                     <td>{{ Home.getHighestRating(bug) }}</td>

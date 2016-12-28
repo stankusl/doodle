@@ -9,6 +9,22 @@
         self.compareEnabled = true;
         self.comparisonArray = [];
 
+        self.orderReverse = {};
+
+        self.sortBy = function(propertyName) {
+          (propertyName !== null && self.propertyName === propertyName) ? !(self.orderReverse) : false;
+          self.propertyName = propertyName;
+
+          self.doodleBugs = orderBy(self.doodleBugs, self.propertyName, self.orderReverse);
+        }
+
+  //       $scope.sortBy = function(propertyName) {
+  //         $scope.reverse = (propertyName !== null && $scope.propertyName === propertyName)
+  //       ? !$scope.reverse : false;
+  //   $scope.propertyName = propertyName;
+  //   $scope.friends = orderBy(friends, $scope.propertyName, $scope.reverse);
+  // };
+
         self.clickBug = function(bugIndex) {
           console.log(self.doodleBugs[bugIndex]);
 
