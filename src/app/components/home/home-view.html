@@ -18,7 +18,7 @@
             <tbody>
 
                 <tr ng-repeat="bug in Home.doodleBugs track by $index" ng-click="Home.clickBug($index)" style="cursor: pointer;">
-                    <td class="icon-{{bug.name + '-bug'}}">{{ bug.name }}<b>:bug</b></td>
+                    <td class="icon-{{bug.name + '-bug'}}">{{ bug.name }}<b>:bug</b>{{ $index }}</td>
                     <td>{{ bug.team }}</td>
                     <td>{{ Home.getHighestRating(bug) }}</td>
                     <td><input name="compare[]" type="checkbox" value="" /></td>
