@@ -8,11 +8,12 @@
         self.doodleBugs = [];
         self.compareEnabled = true;
         self.comparisonArray = [];
-
+        self.reverse = true;
         self.orderReverse = {};
 
         self.sortBy = function(propertyName) {
-          (propertyName !== null && self.propertyName === propertyName) ? !(self.orderReverse) : false;
+          self.orderReverse = (propertyName !== null && self.propertyName === propertyName) ? !self.orderReverse : false;
+          // (propertyName !== null && self.propertyName === propertyName) ? !(self.orderReverse) : false;
           self.propertyName = propertyName;
           self.doodleBugs = orderBy(self.doodleBugs, self.propertyName, self.orderReverse);
         }
