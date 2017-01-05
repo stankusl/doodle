@@ -24,14 +24,13 @@ body {
     user-select: none;
 }
 
-input[type="checkbox"] {
+.checkbox {
     &:focus {
         outline: none;
     }
+    border-radius: 50%;
     padding-left: 5px;
     padding-right: 5px;
-    border-radius: 15px;
-    -webkit-appearance: button;
     border: solid 2px #acc4b7;
     background-color: #fff;
     white-space: nowrap;
@@ -40,12 +39,13 @@ input[type="checkbox"] {
     height: 25px;
 }
 
-input[type="checkbox"]:checked {
-    background-color: #3498db;
-}
-
-input[type="checkbox"]:hover {
-    box-shadow: 0 0 2px #3498db;
+.checkbox{
+  &.checked {
+      background-color: #3498db;
+  }
+  &:hover {
+      box-shadow: 0 0 2px #3498db;
+  }
 }
 
 header {

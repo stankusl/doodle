@@ -1,8 +1,8 @@
 (function() {
     'use strict';
-    angular.module('application').controller('HomeController', ['$rootScope', '$scope', 'HomeServices', 'orderByFilter', HomeController]);
+    angular.module('application').controller('HomeController', ['$rootScope', '$scope', 'HomeServices', 'orderByFilter', '$filter', HomeController]);
 
-    function HomeController($rootScope, $scope, HomeServices, orderBy) {
+    function HomeController($rootScope, $scope, HomeServices, orderBy, $filter) {
         self = this;
         $rootScope.pageTitle = 'Home';
         self.doodleBugs = [];
@@ -18,7 +18,7 @@
           self.doodleBugs = orderBy(self.doodleBugs, self.propertyName, self.orderReverse);
         }
 
-        self.clickBug = function(bugIndex) {
+        self.clickBug = function(bugId) {
 
           if( (self.comparisonArray).length < 2  ) {
 
@@ -27,21 +27,17 @@
             // Check if item alread exists in current array
             angular.forEach(self.comparisonArray, function(value, index) {
               console.log('comparison array itterates', index);
-              if( value.name == self.doodleBugs[bugIndex].name ) {
+              if( value.name == $filter('filter')(self.doodleBugs, {'id' :bugId})[0].name ) {
                 self.comparisonArray.splice(index, 1);
                 isInArray = true;
               }
             });
 
-
             // Item doesnt exist, push item into array.
             if(!isInArray) {
-              self.comparisonArray.push(self.doodleBugs[bugIndex])
+              self.comparisonArray.push($filter('filter')(self.doodleBugs, {'id' :bugId})[0])
             }
             // Item Exists, find item and remove it
-
-
-
 
           }
 
@@ -50,8 +46,15 @@
             return;
           }
 
-          console.log(self.comparisonArray);
-          console.log(bugIndex);
+      //    console.log(self.comparisonArray);
+      //  console.log(bugIndex);
+        }
+
+        self.bugIsInCompare = function(bugId) {
+            if ( $filter('filter')(self.comparisonArray, {'id' :bugId})[0] ) {
+              return true;
+            }
+            return false;
         }
 
         self.isGreater = function(value1, value2) {
