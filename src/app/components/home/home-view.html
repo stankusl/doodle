@@ -19,7 +19,6 @@
                       <span ng-show="!(Home.propertyName === 'team')" class="display-sortable"></span>
                       <span class="sortorder" ng-show="Home.propertyName === 'team'" ng-class="{reverse: Home.orderReverse}"></span>
                     </th>
-                    <!-- <th class="sortable">Best rating</th> -->
                     <th>vs</th>
                 </tr>
             </thead>
@@ -28,7 +27,6 @@
                 <tr ng-repeat="bug in Home.doodleBugs track by $index" ng-click="Home.clickBug(bug.id)" style="cursor: pointer;">
                     <td class="icon-{{bug.name + '-bug'}}">{{ bug.name }}<b>:bug</b></td>
                     <td class="team">{{ bug.team }}</td>
-                    <!-- <td>{{ Home.getHighestRating(bug) }} </td> -->
                     <td><div class="checkbox {{ Home.bugIsInCompare(bug.id) ? 'checked' : '' }}"></div></td>
                 </tr>
 
@@ -72,14 +70,21 @@
 
 
                     <div class="stats speed">
-                        <div class="left-stat text-xs-left col-xs-4">{{ Home.comparisonArray[0].attributes.speed || '0'}}</div>
+                        <div class="left-stat text-xs-left col-xs-4
+                        {{ Home.bugCompare(Home.comparisonArray[0].attributes.speed, Home.comparisonArray[1].attributes.speed)}}">
+                          {{ Home.comparisonArray[0].attributes.speed || '0'}}
+                        </div>
                         <div class="attribute-name text-xs-center col-xs-4">speed</div>
-                        <div class="right-stat text-xs-right col-xs-4">{{ Home.comparisonArray[1].attributes.speed || '0' }}</div>
+                        <div class="right-stat text-xs-right col-xs-4
+                          {{ Home.bugCompare(Home.comparisonArray[1].attributes.speed, Home.comparisonArray[0].attributes.speed)}}">
+                          {{ Home.comparisonArray[1].attributes.speed || '0' }}
+                        </div>
                         <div class="clearfix"></div>
                     </div>
 
                     <div class="stats strength">
-                        <div class="left-stat text-xs-left col-xs-4">{{ Home.comparisonArray[0].attributes.strength || '0'}}</div>
+                        <div class="left-stat text-xs-left col-xs-4
+                        {{ Home.bugCompare(Home.comparisonArray[0].attributes.speed, Home.comparisonArray[1].attributes.speed)}}">{{ Home.comparisonArray[0].attributes.strength || '0'}}</div>
                         <div class="attribute-name text-xs-center col-xs-4">strength</div>
                         <div class="right-stat text-xs-right col-xs-4">{{ Home.comparisonArray[1].attributes.strength || '0'}}</div>
                         <div class="clearfix"></div>

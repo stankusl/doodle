@@ -53,6 +53,17 @@
             return false;
         }
 
+        self.bugCompare = function(value1, value2) {
+          if(value1 && value2) {
+            if (value1 > value2) {
+              return 'greater'
+            }
+            else {
+              return 'leser'
+            }
+          }
+        }
+
         self.isGreater = function(value1, value2) {
           if( parseInt(value1) > parseInt(value2) ) {
             return 'greater';
