@@ -31,7 +31,7 @@ body {
     border-radius: 50%;
     padding-left: 5px;
     padding-right: 5px;
-    margin-top:12px;
+    margin-top: 12px;
     border: solid 2px #acc4b7;
     background-color: #fff;
     white-space: nowrap;
@@ -40,13 +40,14 @@ body {
     height: 25px;
 }
 
-.checkbox{
-  &.checked {
-      background-color: #3498db;
-  }
-  &:hover {
-      box-shadow: 0 0 2px #3498db;
-  }
+.checkbox {
+    &.checked {
+        background-color: #3498db;
+    }
+
+    &:hover {
+        box-shadow: 0 0 2px #3498db;
+    }
 }
 
 header {
@@ -121,20 +122,29 @@ table#doodle-list {
     font-family: 'LatoLight', Lato, arial, sans-serif;
 }
 
+table {
+    font-size: 1.4em;
+}
+
 th {
     text-align: left;
     text-transform: lowercase;
     vertical-align: top;
     padding-right: 30px;
     font-size: 1.6em;
-    white-space:nowrap;
+    white-space: nowrap;
     font-family: 'LatoBold', Lato, arial, sans-serif;
-    font-weight:bold;
+    font-weight: bold;
     line-height: 40px;
     padding-bottom: 10px;
+
     &:first-child {
         text-indent: 100px;
     }
+}
+
+.sortable {
+    cursor: pointer;
 }
 
 th.sortable a {
@@ -169,7 +179,7 @@ td[class^="icon"]:before {
     height: 60px;
     border-radius: 100px;
     font-size: 50px;
-    padding-top: 0px;
+    padding-top: 0;
     padding-left: 5px;
     margin-right: 20px;
     line-height: 60px;
@@ -189,7 +199,6 @@ tr:hover td[class^="icon"]:before {
 tr:hover td {
     color: #3498db;
 }
-
 @media (max-width: 800px) {
     table#doodle-list {
         font-size: 1em;
