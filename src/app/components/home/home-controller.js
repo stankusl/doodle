@@ -26,28 +26,37 @@
 
             // Check if item alread exists in current array
             angular.forEach(self.comparisonArray, function(value, index) {
-              console.log('comparison array itterates', index);
               if( value.name == $filter('filter')(self.doodleBugs, {'id' :bugId})[0].name ) {
                 self.comparisonArray.splice(index, 1);
                 isInArray = true;
               }
             });
 
-            // Item doesnt exist, push item into array.
             if(!isInArray) {
               self.comparisonArray.push($filter('filter')(self.doodleBugs, {'id' :bugId})[0])
             }
-            // Item Exists, find item and remove it
 
           }
 
           else {
-            alert("You can only compare two items!");
+            //var isInArray = false;
+
+            // Check if item alread exists in current array
+            angular.forEach(self.comparisonArray, function(value, index) {
+              if( value.name == $filter('filter')(self.doodleBugs, {'id' :bugId})[0].name ) {
+                self.comparisonArray.splice(index, 1);
+                isInArray = true;
+              }
+            });
+            //
+            // if(!isInArray) {
+            //   self.comparisonArray.push($filter('filter')(self.doodleBugs, {'id' :bugId})[0])
+            // }
+            // This is the condition
+          //  alert("You can only compare two items!");
             return;
           }
 
-      //    console.log(self.comparisonArray);
-      //  console.log(bugIndex);
         }
 
         self.bugIsInCompare = function(bugId) {
