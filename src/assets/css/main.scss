@@ -74,7 +74,9 @@
 
     .comparison-images {
         font-family: 'LatoBold', Lato, arial, sans-serif;
-
+        // .comparison-icon{
+        //   font-size: 6em;
+        // }
         .compare1 {
             display: block;
             position: relative;
@@ -86,7 +88,7 @@
                 right: 0;
                 left: 0;
                 margin: auto;
-                background: #8c97a0;
+                background: #2c3e50;
                 border-radius: 50%;
                 height: 80px;
                 width: 80px;
@@ -95,6 +97,14 @@
                 color: #fff;
                 line-height: 80px;
                 font-weight: bold;
+                &.active {
+                    background: #fff;
+                    &> span {
+                        font-size: 1.35em;
+                        color: #2c3e50;
+                    }
+                }
+
             }
         }
 
@@ -118,7 +128,7 @@
                 right: 0;
                 left: 0;
                 margin: auto;
-                background: #8c97a0;
+                background: #2c3e50;
                 border-radius: 50%;
                 height: 80px;
                 width: 80px;
@@ -127,6 +137,13 @@
                 color: #fff;
                 line-height: 80px;
                 font-weight: bold;
+                &.active {
+                    background: #fff;
+                    &> span {
+                        font-size: 1.35em;
+                        color: #2c3e50;
+                    }
+                }
             }
         }
     }

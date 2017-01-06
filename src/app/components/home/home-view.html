@@ -41,7 +41,7 @@
 
             <div class="comparison-images text-xs-center row">
                 <div class="compare1 col-xs-4">
-                    <span class="holder">
+                    <span class="holder {{ Home.comparisonArray[0] ? 'active': null }}">
                       <span class="icon-{{ Home.comparisonArray[0].name + '-bug' }}"></span>
                       <span ng-if="!Home.comparisonArray[0]">?</span>
                 </span>
@@ -53,7 +53,7 @@
                 </div>
 
                 <div class="compare2 col-xs-4">
-                    <span class="holder">
+                    <span class="holder {{ Home.comparisonArray[1] ? 'active': null }}">
                         <span class="icon-{{ Home.comparisonArray[1].name + '-bug' }}"></span>
                         <span ng-if="!Home.comparisonArray[1]">?</span>
                 </span>
