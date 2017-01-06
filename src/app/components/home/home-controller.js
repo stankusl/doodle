@@ -13,17 +13,15 @@
 
         self.sortBy = function(propertyName) {
           self.orderReverse = (propertyName !== null && self.propertyName === propertyName) ? !self.orderReverse : false;
-          // (propertyName !== null && self.propertyName === propertyName) ? !(self.orderReverse) : false;
           self.propertyName = propertyName;
           self.doodleBugs = orderBy(self.doodleBugs, self.propertyName, self.orderReverse);
         }
 
         self.clickBug = function(bugId) {
 
-          if( (self.comparisonArray).length < 2  ) {
-
+          if( (self.comparisonArray).length < 2  )
+          {
             var isInArray = false;
-
             // Check if item alread exists in current array
             angular.forEach(self.comparisonArray, function(value, index) {
               if( value.name == $filter('filter')(self.doodleBugs, {'id' :bugId})[0].name ) {
@@ -31,32 +29,21 @@
                 isInArray = true;
               }
             });
-
+            // Push into comarison array
             if(!isInArray) {
               self.comparisonArray.push($filter('filter')(self.doodleBugs, {'id' :bugId})[0])
             }
-
           }
 
-          else {
-            //var isInArray = false;
-
-            // Check if item alread exists in current array
+          else
+          {
+            // Remove if already selected
             angular.forEach(self.comparisonArray, function(value, index) {
               if( value.name == $filter('filter')(self.doodleBugs, {'id' :bugId})[0].name ) {
                 self.comparisonArray.splice(index, 1);
-                isInArray = true;
               }
             });
-            //
-            // if(!isInArray) {
-            //   self.comparisonArray.push($filter('filter')(self.doodleBugs, {'id' :bugId})[0])
-            // }
-            // This is the condition
-          //  alert("You can only compare two items!");
-            return;
           }
-
         }
 
         self.bugIsInCompare = function(bugId) {
@@ -92,10 +79,9 @@
         HomeServices.getAllBugs().then(
         function(result) {
             self.doodleBugs = result;
-            console.log(result);
         },
         function(err) {
-            console.log('Error saving to endpoint: ', err);
+            console.log('Error retrieving from endpoint: ', err);
         });
 
     };
