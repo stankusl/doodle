@@ -15,13 +15,29 @@
     }
   }
 }
+.display-sortable{
+  display: inline-block;
+  width: 14px;
+  height:34px;
+  background: url("../img/order-sprite.png") no-repeat 0 8px;
+}
 
 .sortorder:after {
-  content: '\25b2';   // BLACK UP-POINTING TRIANGLE
+    display: inline-block;
+    width: 14px;
+    height:34px;
+    background: url("../img/order-sprite.png") no-repeat 0 -93px;
+
+  content: '';   // BLACK UP-POINTING TRIANGLE
 }
 
 .sortorder.reverse:after {
-  content: '\25bc';   // BLACK DOWN-POINTING TRIANGLE
+  // content: '\25bc';   // BLACK DOWN-POINTING TRIANGLE
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height:34px;
+    background: url("../img/order-sprite.png") no-repeat 0 -143px;
 }
 
 

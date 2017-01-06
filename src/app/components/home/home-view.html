@@ -11,13 +11,15 @@
                 <tr>
                     <th class="sortable bugname" ng-click="Home.sortBy('name')">
                       Doodlee
+                      <span ng-show="!(Home.propertyName === 'name')" class="display-sortable"></span>
                       <span class="sortorder" ng-show="Home.propertyName === 'name'" ng-class="{reverse: Home.orderReverse}"></span>
                     </th>
                     <th class="sortable" ng-click="Home.sortBy('team')">
                       Team
+                      <span ng-show="!(Home.propertyName === 'team')" class="display-sortable"></span>
                       <span class="sortorder" ng-show="Home.propertyName === 'team'" ng-class="{reverse: Home.orderReverse}"></span>
                     </th>
-                    <th class="sortable">Best rating</th>
+                    <!-- <th class="sortable">Best rating</th> -->
                     <th>vs</th>
                 </tr>
             </thead>
@@ -26,7 +28,7 @@
                 <tr ng-repeat="bug in Home.doodleBugs track by $index" ng-click="Home.clickBug(bug.id)" style="cursor: pointer;">
                     <td class="icon-{{bug.name + '-bug'}}">{{ bug.name }}<b>:bug</b></td>
                     <td>{{ bug.team }}</td>
-                    <td>{{ Home.getHighestRating(bug) }} </td>
+                    <!-- <td>{{ Home.getHighestRating(bug) }} </td> -->
                     <td><div class="checkbox {{ Home.bugIsInCompare(bug.id) ? 'checked' : '' }}"></div></td>
                 </tr>
 
@@ -60,13 +62,13 @@
                 </div>
             </div>
 
-            <p ng-if="!Home.compareEnabled" id="info-text" class="text-xs-center">
+            <p ng-if="(Home.comparisonArray).length == 0" id="info-text" class="text-xs-center">
                 Select two doodles to<br> compare which has the<br> skills you like most.
             </p>
 
             <div  class="stats row">
 
-                <section ng-if="Home.compareEnabled" id="stats-holder">
+                <section ng-if="(Home.comparisonArray).length > 0" id="stats-holder">
 
 
                     <div class="stats speed">
