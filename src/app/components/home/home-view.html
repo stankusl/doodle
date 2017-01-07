@@ -76,7 +76,7 @@
                         </div>
                         <div class="attribute-name text-xs-center col-xs-4">speed</div>
                         <div class="right-stat text-xs-right col-xs-4
-                          {{ Home.bugCompare(Home.comparisonArray[1].attributes.speed, Home.comparisonArray[0].attributes.speed)}}">
+                        {{ Home.bugCompare(Home.comparisonArray[1].attributes.speed, Home.comparisonArray[0].attributes.speed)}}">
                           {{ Home.comparisonArray[1].attributes.speed || '0' }}
                         </div>
                         <div class="clearfix"></div>
@@ -84,16 +84,27 @@
 
                     <div class="stats strength">
                         <div class="left-stat text-xs-left col-xs-4
-                        {{ Home.bugCompare(Home.comparisonArray[0].attributes.speed, Home.comparisonArray[1].attributes.speed)}}">{{ Home.comparisonArray[0].attributes.strength || '0'}}</div>
+                        {{ Home.bugCompare(Home.comparisonArray[0].attributes.strength, Home.comparisonArray[1].attributes.strength)}}">
+                          {{ Home.comparisonArray[0].attributes.strength || '0'}}
+                        </div>
                         <div class="attribute-name text-xs-center col-xs-4">strength</div>
-                        <div class="right-stat text-xs-right col-xs-4">{{ Home.comparisonArray[1].attributes.strength || '0'}}</div>
+                        <div class="right-stat text-xs-right col-xs-4
+                        {{ Home.bugCompare(Home.comparisonArray[1].attributes.strength, Home.comparisonArray[0].attributes.strength)}}">
+                          {{ Home.comparisonArray[1].attributes.strength || '0'}}
+                        </div>
                         <div class="clearfix"></div>
                     </div>
 
                     <div class="stats agility">
-                        <div class="left-stat text-xs-left col-xs-4">{{ Home.comparisonArray[0].attributes.intelligence || '0' }}</div>
+                        <div class="left-stat text-xs-left col-xs-4
+                        {{ Home.bugCompare(Home.comparisonArray[0].attributes.intelligence, Home.comparisonArray[1].attributes.intelligence)}}">
+                          {{ Home.comparisonArray[0].attributes.intelligence || '0' }}
+                        </div>
                         <div class="attribute-name text-xs-center col-xs-4">intelligence</div>
-                        <div class="right-stat text-xs-right col-xs-4">{{ Home.comparisonArray[1].attributes.intelligence || '0'}}</div>
+                        <div class="right-stat text-xs-right col-xs-4
+                        {{ Home.bugCompare(Home.comparisonArray[1].attributes.intelligence, Home.comparisonArray[0].attributes.intelligence)}}">
+                          {{ Home.comparisonArray[1].attributes.intelligence || '0'}}
+                        </div>
                         <div class="clearfix"></div>
                     </div>
 
