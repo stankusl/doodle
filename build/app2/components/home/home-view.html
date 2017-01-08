@@ -1,0 +1,127 @@
+<!-- Add your site or application content here -->
+<header>
+    <h1>doodle<span>:bug</span></h1>
+</header>
+
+<div class="container">
+
+    <section id="bug-list" class="col-xs-12 col-lg-8">
+        <table name="doodle-list" description="All available players for the game">
+            <thead>
+                <tr>
+                    <th class="sortable" ng-click="Home.sortBy('name')">
+                      Doodlee
+                      <span ng-show="!(Home.propertyName === 'name')" class="display-sortable"></span>
+                      <span class="sortorder" ng-show="Home.propertyName === 'name'" ng-class="{reverse: Home.orderReverse}"></span>
+                    </th>
+                    <th class="sortable" ng-click="Home.sortBy('team')">
+                      Team
+                      <span ng-show="!(Home.propertyName === 'team')" class="display-sortable"></span>
+                      <span class="sortorder" ng-show="Home.propertyName === 'team'" ng-class="{reverse: Home.orderReverse}"></span>
+                    </th>
+                    <th>vs</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr ng-repeat="bug in Home.doodleBugs track by $index" ng-click="Home.clickBug(bug.id)" style="cursor: pointer;">
+                    <td class="icon-{{bug.name + '-bug'}}">{{ bug.name }}<b>:bug</b></td>
+                    <td class="team">{{ bug.team }}</td>
+                    <td><div class="checkbox {{ Home.bugIsInCompare(bug.id) ? 'checked' : '' }}"></div></td>
+                </tr>
+
+            </tbody>
+
+        </table>
+        <div class="clearfix"></div>
+    </section>
+
+    <section class="col-xs-12 col-lg-4">
+        <div id="comparison-area">
+
+            <div class="comparison-images text-xs-center row">
+                <div class="compare1 col-xs-4">
+                    <span class="holder {{ Home.comparisonArray[0] ? 'active': null }}">
+                      <span class="icon-{{ Home.comparisonArray[0].name + '-bug' }}"></span>
+                      <span ng-if="!Home.comparisonArray[0]">?</span>
+                </span>
+
+                </div>
+
+                <div class="compare-vs col-xs-4">
+                    vs
+                </div>
+
+                <div class="compare2 col-xs-4">
+                    <span class="holder {{ Home.comparisonArray[1] ? 'active': null }}">
+                        <span class="icon-{{ Home.comparisonArray[1].name + '-bug' }}"></span>
+                        <span ng-if="!Home.comparisonArray[1]">?</span>
+                </span>
+                </div>
+            </div>
+
+            <p ng-if="(Home.comparisonArray).length == 0" id="info-text" class="text-xs-center">
+                Select two doodles to<br> compare which has the<br> skills you like most.
+            </p>
+
+            <div  class="stats row">
+
+                <section ng-if="(Home.comparisonArray).length > 0" id="stats-holder">
+
+
+                    <div class="stats speed">
+                        <div class="left-stat text-xs-left col-xs-4
+                        {{ Home.bugCompare(Home.comparisonArray[0].attributes.speed, Home.comparisonArray[1].attributes.speed)}}">
+                          {{ Home.comparisonArray[0].attributes.speed || '0'}}
+                        </div>
+                        <div class="attribute-name text-xs-center col-xs-4">speed</div>
+                        <div class="right-stat text-xs-right col-xs-4
+                        {{ Home.bugCompare(Home.comparisonArray[1].attributes.speed, Home.comparisonArray[0].attributes.speed)}}">
+                          {{ Home.comparisonArray[1].attributes.speed || '0' }}
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="stats strength">
+                        <div class="left-stat text-xs-left col-xs-4
+                        {{ Home.bugCompare(Home.comparisonArray[0].attributes.strength, Home.comparisonArray[1].attributes.strength)}}">
+                          {{ Home.comparisonArray[0].attributes.strength || '0'}}
+                        </div>
+                        <div class="attribute-name text-xs-center col-xs-4">strength</div>
+                        <div class="right-stat text-xs-right col-xs-4
+                        {{ Home.bugCompare(Home.comparisonArray[1].attributes.strength, Home.comparisonArray[0].attributes.strength)}}">
+                          {{ Home.comparisonArray[1].attributes.strength || '0'}}
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="stats agility">
+                        <div class="left-stat text-xs-left col-xs-4
+                        {{ Home.bugCompare(Home.comparisonArray[0].attributes.intelligence, Home.comparisonArray[1].attributes.intelligence)}}">
+                          {{ Home.comparisonArray[0].attributes.intelligence || '0' }}
+                        </div>
+                        <div class="attribute-name text-xs-center col-xs-4">intelligence</div>
+                        <div class="right-stat text-xs-right col-xs-4
+                        {{ Home.bugCompare(Home.comparisonArray[1].attributes.intelligence, Home.comparisonArray[0].attributes.intelligence)}}">
+                          {{ Home.comparisonArray[1].attributes.intelligence || '0'}}
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </section>
+
+                <div class="clearfix"></div>
+
+                <div id="comparisonBase"></div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+        <!-- <pre>
+            {{ Home.comparisonArray | json }}
+        </pre> -->
+
+    </section>
+
+    <div class="clearfix"></div>
+</div>
