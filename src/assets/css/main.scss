@@ -59,9 +59,10 @@
     }
 
     #stats-holder {
-        height: 160px;
+        height: 179px;
         margin-top: 45px;
         font-family: Lato, arial, sans-serif;
+        transition: height 2s ease;
 
         .stats {
             margin-top: 10px;
