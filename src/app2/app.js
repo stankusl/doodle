@@ -7,7 +7,8 @@
 
         // this is available from all across the app
         $rootScope.appName = 'Doodle Bug';
-        $rootScope.WebAPI = "app/api";
+        $rootScope.WebAPI = "app2/api";
+        
     }])
 
     .config(['$locationProvider', function($locationProvider) {

@@ -21,7 +21,7 @@ var gulp = require('gulp'),
 // GULP PATHS
 var path = {
     src: {
-        application: 'src/app/**/*.*',
+        application: 'src/app2/**/*.*',
         root: 'src/*.*',
         img: 'src/assets/img/**/*.*',
         fonts: 'src/assets/fonts/**/*.*',
@@ -29,7 +29,7 @@ var path = {
         js: 'src/assets/js/**/*.*'
     },
     build: {
-        application: 'build/app/',
+        application: 'build/app2/',
         root: 'build/',
         img: 'build/assets/img/',
         fonts: 'build/assets/fonts/',
@@ -38,7 +38,7 @@ var path = {
         js: 'build/assets/js/'
     },
     watch: {
-        application: 'src/app/**/*.*',
+        application: 'src/app2/**/*.*',
         root: 'src/**/*.*',
         img: 'src/assets/img/**/*.*',
         fonts: 'src/assets/fonts/**/*.*',

@@ -9,10 +9,10 @@
 
         .state('homepage', {
             url: '/',
-            templateUrl: './app/components/home/home-view.html',
+            templateUrl: './app2/components/home/home-view.html',
             controller: 'HomeController',
             controllerAs: 'Home'
-        })    
+        })
 
         $urlRouterProvider.otherwise('/');
     }]);
